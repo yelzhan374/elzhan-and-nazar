@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Укрепи себе в ИМАН</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('mosque-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    .animated-text {
+      margin-top: 100px;
+      font-size: 36px;
+      animation: fadeIn 4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 22px;
+      color: #f0f0f0;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <p class="animated-text">بسم الله الرحمن الرحيم</p>
+  <p class="animated-text">Укрепи себе в ИМАН</p>
+  <audio autoplay loop>
+    <source src="zikr.mp3" type="audio/mpeg">
+  </audio>
+  <a href="https://github.com/yelzhan374/elzhan-and-nazar" target="_blank">Слушать Капсулу</a>
+</body>
+</html>
