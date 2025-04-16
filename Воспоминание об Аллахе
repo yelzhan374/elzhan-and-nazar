@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вспоминание об Аллахе</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://raw.githubusercontent.com/yelzhan374/elzhan-and-nazar/main/images/dua-hands.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: brightness(0.6);
+    }
+    h1 {
+      font-size: 3em;
+      animation: fadeIn 4s ease-in-out;
+    }
+    p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: fadeIn 6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    audio {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <h1>Это тронет твою душу</h1>
+  <p>Всё есть в этом зикре и Коране... Ради Аллаха — вспомни, а завтра встретимся в Джаннате</p>
+  <audio controls autoplay loop>
+    <source src="https://raw.githubusercontent.com/yelzhan374/elzhan-and-nazar/main/audio/mishari-rashid--zikr.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+</body>
+</html>
