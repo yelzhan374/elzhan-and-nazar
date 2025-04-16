@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цифровая Капсула ИМАН</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+      text-align: center;
+      padding: 40px;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    .ayah {
+      font-size: 24px;
+      font-weight: bold;
+      color: #006400;
+      margin-top: 20px;
+    }
+    .translation {
+      font-size: 18px;
+      color: #333;
+      margin-top: 10px;
+    }
+    .lang-toggle {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #008080;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .signature {
+      margin-top: 40px;
+      font-style: italic;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bismillah.svg/1200px-Bismillah.svg.png" alt="Бисмиллях" class="logo" />
+  <div id="content">
+    <div class="ayah" id="ayah">﴾ فَذَكِّرْ إِنَّمَا أَنتَ مُذَكِّرٌ ﴿</div>
+    <div class="translation" id="translation">Напоминай же (о Коране), ведь ты — лишь напоминатель. (Коран 88:21)</div>
+  </div>  <div class="lang-toggle">
+    <button onclick="switchLanguage()">Переключить язык / Switch Language</button>
+  </div>  <div class="signature">Укрепи себе в ИМАН — Тлеубай.Елжан и Назар</div>  <audio id="audio" autoplay>
+    <source src="https://github.com/yelzhan374/elzhan-and-nazar/raw/main/audio/iman-message.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>  <script>
+    let currentLang = 'ru';
+
+    function switchLanguage() {
+      const ayah = document.getElementById('ayah');
+      const translation = document.getElementById('translation');
+      if (currentLang === 'ru') {
+        ayah.textContent = '﴾ فَذَكِّرْ إِنَّمَا أَنتَ مُذَكِّرٌ ﴿';
+        translation.textContent = 'So remind, [O Muhammad]; you are only a reminder. (Qur'an 88:21)';
+        currentLang = 'en';
+      } else {
+        ayah.textContent = '﴾ فَذَكِّرْ إِنَّمَا أَنتَ مُذَكِّرٌ ﴿';
+        translation.textContent = 'Напоминай же (о Коране), ведь ты — лишь напоминатель. (Коран 88:21)';
+        currentLang = 'ru';
+      }
+    }
+  </script></body>
+</html>
