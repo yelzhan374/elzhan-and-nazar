@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Qalb Sauti – Жүрек үні</title>
+  <style>index.html
+    body {
+      background: #e6f0ff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #003366;
+    }
+    .heart {
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin: 30px auto;
+      transform: rotate(-45deg);
+      animation: pulse 2s infinite;
+      position: relative;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Жүрек үнін тыңда...</h1>
+  <div class="heart"></div>
+
+  <audio id="qalbAudio" autoplay>
+    <source src="https://yelzhan374.github.io/elzhan-and-nazar/audio/zov-serdec.mp3" type="audio/mp3">
+    Сіздің браузеріңіз аудионы қолдамайды.
+  </audio>
+
+  <p>Экранға басқанда жүрек үні естіледі.</p>
+
+  <script>
+    window.addEventListener('click', () => {
+      document.getElementById('qalbAudio').play();
+    }, { once: true });
+  </script>
+</body>
+</html>
