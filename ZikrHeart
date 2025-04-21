@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зікір жүрегі</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div class="text-center space-y-6">
+    <h1 class="text-4xl font-bold">Зікір жүрегі</h1>
+    <div id="heart" class="w-40 h-40 bg-pink-500 rounded-full shadow-2xl mx-auto transition-all duration-500"></div>
+    <p id="status" class="text-lg">Жүрек тыңдап тұр...</p>
+    <button onclick="startListening()" class="mt-4 px-6 py-2 bg-white text-black rounded-full">Зікірді бастау</button>
+  </div>
+</body>
+</html>
+const heart = document.getElementById("heart");
+const statusText = document.getElementById("status");
+
+const zikrColors = {
+  "аллаһ": "bg-amber-500",
+  "субханаллаһ": "bg-sky-500",
+  "аллаһу акбар": "bg-red-500",
+  "лә илаһә иллаллаһ": "bg-green-600"
+};
+
+function changeHeart(colorClass, message) {
+  heart.className = `w-40 h-40 rounded-full shadow-2xl mx-auto transition-all duration-500 ${colorClass}`;
+  statusText.textContent = message;
+}
+
+function startListening() {
+  const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+  recognition.lang = "kk-KZ"; // Қазақша
+  recognition.continuous = true;
+
+  recognition.onresult = function (event) {
+    const transcript = event.results[event.results.length - 1][0].transcript.toLowerCase();
+    console.log("Тыңдалған:", transcript);
+
+    for (const [zikr, color] of Object.entries(zikrColors)) {
+      if (transcript.includes(zikr)) {
+        changeHeart(color, `Зікір табылды: "${zikr}"`);
+        return;
+      }
+    }
+
+    statusText.textContent = "Зікір естілмеді...";
+  };
+
+  recognition.onerror = function () {
+    statusText.textContent = "Қате болды, қайта көріңіз.";
+  };
+
+  recognition.start();
+  statusText.textContent = "Тыңдау басталды...";
+}
